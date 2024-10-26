@@ -34,11 +34,9 @@ const addNewGoal = () => {
       alert("This goal already exists!");
       return clearInput();
     } else {
-      return clearInput();
+      const newGoal = document.createElement("li");
+      newGoal.textContent = goalInput;
     }
-    const newGoal = document.createElement("li");
-    newGoal.textContent = goalInput;
-    goalList.appendChild(newGoal);
   }
   const newGoal = document.createElement("li");
   newGoal.textContent = goalInput;
@@ -49,7 +47,7 @@ const addNewGoal = () => {
 document.querySelector("#submitGoal").addEventListener("click", addNewGoal);
 
 function clearInput() {
-  let goalInput = "";
+  goalInput.value = " ";
 }
 ///
 let waterIntake = 0;
