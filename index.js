@@ -25,6 +25,7 @@ document
 const addNewGoal = () => {
   const goalInput = document.querySelector("#goalInput").value;
   const goalList = document.querySelector("#goalList");
+  //declaration to retrieve array from the Goallist and return a new array to the newGoal
   const goals = Array.from(goalList.children).map(
     (newGoal) => newGoal.textContent
   );
@@ -34,6 +35,7 @@ const addNewGoal = () => {
       alert("This goal already exists!");
       return clearInput();
     } else {
+      return clearInput();
       const newGoal = document.createElement("li");
       newGoal.textContent = goalInput;
     }
@@ -46,6 +48,7 @@ const addNewGoal = () => {
 // Add event listener to the goal submit button
 document.querySelector("#submitGoal").addEventListener("click", addNewGoal);
 
+//Add function to clear input field once button is clicked
 function clearInput() {
   goalInput.value = " ";
 }
