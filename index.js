@@ -34,10 +34,11 @@ const addNewGoal = () => {
     if (goals.includes(goalInput)) {
       alert("This goal already exists!");
       return clearInput();
+      return;
     } else {
-      return clearInput();
       const newGoal = document.createElement("li");
       newGoal.textContent = goalInput;
+      //goalList.appendChild(newGoal);
     }
   }
   const newGoal = document.createElement("li");
